@@ -134,12 +134,12 @@ export default function Header() {
 
   // Submenu configuration (Fordeal categories)
   const homeSubmenuItems = [
-    { key: "cat_hot", href: "/hot-sale", tagEn: "HOT", tagBn: "হট" },
-    { key: "cat_women", href: "/women", tagEn: "TREND", tagBn: "ট্রেন্ড" },
-    { key: "cat_men", href: "/men", tagEn: "NEW", tagBn: "নতুন" },
-    { key: "cat_shoes", href: "/shoes", tagEn: "50% OFF", tagBn: "৫০% ছাড়" },
-    { key: "cat_kids", href: "/kids-toys", tagEn: "KIDS", tagBn: "কিডস" },
-    { key: "cat_watches", href: "/watches-accessories", tagEn: "LUXE", tagBn: "লাক্স" },
+    { key: "cat_hot", href: "/?category=cat_hot", tagEn: "HOT", tagBn: "হট" },
+    { key: "cat_women", href: "/?category=cat_women", tagEn: "TREND", tagBn: "ট্রেন্ড" },
+    { key: "cat_men", href: "/?category=cat_men", tagEn: "NEW", tagBn: "নতুন" },
+    { key: "cat_shoes", href: "/?category=cat_shoes", tagEn: "50% OFF", tagBn: "৫০% ছাড়" },
+    { key: "cat_kids", href: "/?category=cat_kids", tagEn: "KIDS", tagBn: "কিডস" },
+    { key: "cat_watches", href: "/?category=cat_watches", tagEn: "LUXE", tagBn: "লাক্স" },
   ];
   
   // Search state
@@ -544,10 +544,14 @@ export default function Header() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-[#740108] hover:bg-[#5c0006] text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-red-500/10 hover:shadow-red-500/20 transition-all group">
+                  <Link 
+                    href="/checkout" 
+                    onClick={() => setIsCartOpen(false)}
+                    className="w-full bg-[#740108] hover:bg-[#5c0006] text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-red-500/10 hover:shadow-red-500/20 transition-all group justify-center text-center"
+                  >
                     <span>{t("checkout")}</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
               )}
             </motion.div>

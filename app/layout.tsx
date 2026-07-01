@@ -6,6 +6,7 @@ import "./globals.css";
 import { Josefin_Sans } from "next/font/google";
 import { Providers } from "./providers";
 import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 
 const josefinSans = Josefin_Sans({
   subsets: ["latin"],
@@ -77,6 +78,7 @@ export default function RootLayout({
           <main className="min-h-screen pt-16 md:pt-20">
             {children}
           </main>
+          <Footer />
         </Providers>
       </body>
     </html>

@@ -29,6 +29,7 @@ interface LanguageContextProps {
   updateQuantity: (id: string, delta: number) => void;
   isCartOpen: boolean;
   setIsCartOpen: (open: boolean) => void;
+  clearCart: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
@@ -195,6 +196,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     return dict[key] || key;
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <LanguageContext.Provider
       value={{
@@ -209,6 +214,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         updateQuantity,
         isCartOpen,
         setIsCartOpen,
+        clearCart,
       }}
     >
       {children}
