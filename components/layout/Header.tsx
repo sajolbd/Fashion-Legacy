@@ -226,7 +226,7 @@ export default function Header() {
               {/* Logo Container */}
               <Link href="/" className="flex items-center gap-2.5 h-full">
                 {/* Crest Emblem - Cropped visually using overflow-hidden + object-cover + object-left */}
-                <div className="relative h-auto w-36  md:w-64 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                <div className="relative h-auto w-24  md:w-40 overflow-hidden flex-shrink-0 flex items-center justify-center">
                   <Image
                     src="/images/logo.png"
                     alt="Fashion Legacy Emblem"

@@ -14,8 +14,8 @@ const josefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
 });
 
-const siteUrl = "https://fashion-legacy.vercel.app";
-const ogImageUrl = `${siteUrl}/opengraph-image.png`;
+const siteUrl = "https://fashionlegacy.live/";
+const ogImageUrl = `${siteUrl}/opengraph-image.jpeg`;
 
 /* ---------------- METADATA ---------------- */
 
