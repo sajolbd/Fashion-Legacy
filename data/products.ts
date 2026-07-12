@@ -12,7 +12,7 @@ export interface Product {
   nameBn: string;
   descriptionEn: string;
   descriptionBn: string;
-  category: "cat_hot" | "cat_women" | "cat_men" | "cat_shoes" | "cat_watches" | "cat_kids";
+  category: string | string[];
   priceUSD: number;
   discountPercent: number; // e.g. 40 for 40% discount
   images: string[];

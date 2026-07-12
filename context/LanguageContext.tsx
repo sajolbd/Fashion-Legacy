@@ -33,6 +33,15 @@ interface LanguageContextProps {
   clearCart: () => void;
   products: Product[];
   isLoadingProducts: boolean;
+  categories: Category[];
+  isLoadingCategories: boolean;
+}
+
+export interface Category {
+  id: string;
+  nameEn: string;
+  nameBn: string;
+  image: string;
 }
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
@@ -120,8 +129,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoadingProducts, setIsLoadingProducts] = useState(true);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [isLoadingCategories, setIsLoadingCategories] = useState(true);
 
-  // Fetch products from backend API
+  // Fetch products and categories from backend API
   useEffect(() => {
     const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
     fetch(`${apiBaseUrl}/api/products`)
@@ -134,6 +145,25 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         console.error("Failed to load products from API", err);
         setProducts(STATIC_PRODUCTS);
         setIsLoadingProducts(false);
+      });
+
+    fetch(`${apiBaseUrl}/api/categories`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCategories(data);
+        setIsLoadingCategories(false);
+      })
+      .catch((err) => {
+        console.error("Failed to load categories from API", err);
+        setCategories([
+          { id: "cat_hot", nameEn: "Hot Sale", nameBn: "হট সেল", image: "/images/categories/hot.png" },
+          { id: "cat_women", nameEn: "Women's Fashion", nameBn: "মহিলাদের ফ্যাশন", image: "/images/categories/women.png" },
+          { id: "cat_men", nameEn: "Men's Fashion", nameBn: "পুরুষদের ফ্যাশন", image: "/images/categories/men.png" },
+          { id: "cat_shoes", nameEn: "Shoes", nameBn: "জুতো", image: "/images/categories/shoes.png" },
+          { id: "cat_watches", nameEn: "Watches & Acc.", nameBn: "ঘড়ি ও অ্যাক্সেসরিজ", image: "/images/categories/watches.png" },
+          { id: "cat_kids", nameEn: "Kids & Toys", nameBn: "বাচ্চাদের খেলনা ও পোশাক", image: "/images/categories/kids.png" }
+        ]);
+        setIsLoadingCategories(false);
       });
   }, []);
 
@@ -190,8 +220,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       }
       return [...prev, { ...newItem, quantity: 1 }];
     });
-    // Automatically slide cart drawer open
-    setIsCartOpen(true);
+    // Automatically slide cart drawer open (Disabled)
+    // setIsCartOpen(true);
   };
 
   // Remove from cart action
@@ -239,6 +269,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         clearCart,
         products,
         isLoadingProducts,
+        categories,
+        isLoadingCategories,
       }}
     >
       {children}

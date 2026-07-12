@@ -22,6 +22,7 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
 
   const activeName = language === "en" ? product.nameEn : product.nameBn;
   const currencySymbol = getCurrencySymbol(currency);
+  const mainCategory = Array.isArray(product.category) ? product.category[0] : (product.category || "cat_hot");
   
   const displayActivePrice = convertPrice(discountedPrice, currency);
   const displayOriginalPrice = convertPrice(originalPrice, currency);
@@ -91,8 +92,8 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
             {/* Category Tag */}
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">
               {language === "en" 
-                ? product.category.replace("cat_", "").toUpperCase()
-                : product.category === "cat_women" ? "মহিলাদের ফ্যাশন" : product.category === "cat_men" ? "পুরুষদের ফ্যাশন" : "হট সেল"}
+                ? mainCategory.replace("cat_", "").toUpperCase()
+                : mainCategory === "cat_women" ? "মহিলাদের ফ্যাশন" : mainCategory === "cat_men" ? "পুরুষদের ফ্যাশন" : "হট সেল"}
             </span>
 
             {/* Product Title */}

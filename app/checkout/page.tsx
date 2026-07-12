@@ -28,7 +28,8 @@ export default function CheckoutPage() {
   const [senderNumber, setSenderNumber] = useState("");
   const [transactionId, setTransactionId] = useState("");
 
-  // Pre-fill fields from Auth profile if logged in
+  // Pre-fill fields from Auth profile if logged in (Disabled to show placeholders instead)
+  /*
   useEffect(() => {
     if (isAuthenticated && user) {
       setName(user.name);
@@ -36,6 +37,19 @@ export default function CheckoutPage() {
       setAddress(user.address);
     }
   }, [isAuthenticated, user]);
+  */
+
+  const toBanglaDigits = (numStr: string) => {
+    const banglaDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+    return numStr.replace(/\d/g, (d) => banglaDigits[parseInt(d)]);
+  };
+
+  const formatShippingOption = (amountUSD: number) => {
+    const converted = parseFloat(convertPrice(amountUSD, currency));
+    const formattedVal = (currency === "BDT" || currency === "SAR") ? converted.toFixed(0) : converted.toFixed(2);
+    const valStr = language === "en" ? formattedVal : toBanglaDigits(formattedVal);
+    return `${currencySymbol}${valStr}`;
+  };
 
   // Loading & order placement state
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -218,7 +232,7 @@ export default function CheckoutPage() {
 
             <div className="flex justify-between pt-1 text-base font-black text-gray-900">
               <span className="uppercase">{language === "en" ? "Total Paid" : "সর্বমোট বিল"}</span>
-              <span className="text-[#740108]">{finalTotal}</span>
+              <span className="text-[#740108]">{language === "en" ? finalTotal : toBanglaDigits(finalTotal)}</span>
             </div>
           </div>
 
@@ -266,7 +280,7 @@ export default function CheckoutPage() {
                     <div className="relative">
                       <input
                         type="text"
-                        placeholder={language === "en" ? "Enter your full name" : "আপনার পূর্ণ নাম লিখুন"}
+                        placeholder={language === "en" ? "e.g. Shamim Ahsan" : "যেমন: শামীম আহসান"}
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         className={`w-full bg-gray-50 border rounded-xl px-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
@@ -290,7 +304,7 @@ export default function CheckoutPage() {
                     <div className="relative">
                       <input
                         type="tel"
-                        placeholder={language === "en" ? "e.g. 017XXXXXXXX" : "যেমন: ০১৭XXXXXXXX"}
+                        placeholder={language === "en" ? "e.g. 01712345678" : "যেমন: ০১৭১২৩৪৫৬৭৮"}
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         className={`w-full bg-gray-50 border rounded-xl px-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
@@ -313,7 +327,7 @@ export default function CheckoutPage() {
                     </label>
                     <textarea
                       rows={3}
-                      placeholder={language === "en" ? "House, Road, Area, District" : "বাসা নম্বর, রোড নম্বর, এলাকা, জেলা"}
+                      placeholder={language === "en" ? "e.g. House 14, Road 5, Uttara Sector 4, Dhaka" : "যেমন: বাসা ১৪, রোড ৫, উত্তরা সেক্টর ৪, ঢাকা"}
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
                       className={`w-full bg-gray-50 border rounded-xl px-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all resize-none ${
@@ -364,7 +378,7 @@ export default function CheckoutPage() {
                       </span>
                     </div>
                     <span className="text-xs md:text-sm font-black text-[#740108] flex-shrink-0">
-                      ৳৮০
+                      {formatShippingOption(80 / 120)}
                     </span>
                   </button>
 
@@ -394,7 +408,7 @@ export default function CheckoutPage() {
                       </span>
                     </div>
                     <span className="text-xs md:text-sm font-black text-[#740108] flex-shrink-0">
-                      ৳১৫০
+                      {formatShippingOption(150 / 120)}
                     </span>
                   </button>
                 </div>
@@ -477,54 +491,57 @@ export default function CheckoutPage() {
                           <button
                             type="button"
                             onClick={() => setSelectedGateway("bkash")}
-                            className={`flex-1 h-11 rounded-xl border-2 transition-all flex items-center justify-center ${
+                            className={`flex-1 h-11 rounded-xl border-2 transition-all flex items-center justify-center p-2 ${
                               selectedGateway === "bkash"
                                 ? "border-[#D12053] bg-[#D12053]/5 shadow-sm"
                                 : "border-gray-200 bg-white hover:bg-gray-50"
                             }`}
                           >
-                            <svg viewBox="0 0 120 40" className="h-7 w-auto select-none">
-                              <rect width="120" height="40" rx="8" fill="#e2136e" />
-                              <path d="M15 12 L28 12 L22 28 L9 28 Z" fill="#ffffff" />
-                              <circle cx="21" cy="20" r="5" fill="#f5a623" />
-                              <text x="38" y="26" fill="#ffffff" fontSize="13" fontWeight="900" fontFamily="sans-serif">bKash</text>
-                            </svg>
+                            <Image
+                              src="/images/bkash.png"
+                              alt="bKash"
+                              width={120}
+                              height={40}
+                              className="h-8 w-auto object-contain select-none"
+                            />
                           </button>
                           
                           {/* Nagad */}
                           <button
                             type="button"
                             onClick={() => setSelectedGateway("nagad")}
-                            className={`flex-1 h-11 rounded-xl border-2 transition-all flex items-center justify-center ${
+                            className={`flex-1 h-11 rounded-xl border-2 transition-all flex items-center justify-center p-2 ${
                               selectedGateway === "nagad"
                                 ? "border-[#F15A22] bg-[#F15A22]/5 shadow-sm"
                                 : "border-gray-200 bg-white hover:bg-gray-50"
                             }`}
                           >
-                            <svg viewBox="0 0 120 40" className="h-7 w-auto select-none">
-                              <rect width="120" height="40" rx="8" fill="#f55d23" />
-                              <path d="M14 26 C16 12, 26 12, 28 26 C26 28, 16 28, 14 26 Z" fill="#ffffff" />
-                              <path d="M19 22 C21 16, 26 16, 27 22" fill="#f5a623" stroke="#f5a623" strokeWidth="2" />
-                              <text x="38" y="26" fill="#ffffff" fontSize="13" fontWeight="900" fontFamily="sans-serif">Nagad</text>
-                            </svg>
+                            <Image
+                              src="/images/nagad.png"
+                              alt="Nagad"
+                              width={120}
+                              height={40}
+                              className="h-8 w-auto object-contain select-none"
+                            />
                           </button>
 
                           {/* Rocket */}
                           <button
                             type="button"
                             onClick={() => setSelectedGateway("rocket")}
-                            className={`flex-1 h-11 rounded-xl border-2 transition-all flex items-center justify-center ${
+                            className={`flex-1 h-11 rounded-xl border-2 transition-all flex items-center justify-center p-2 ${
                               selectedGateway === "rocket"
                                 ? "border-[#8C3494] bg-[#8C3494]/5 shadow-sm"
                                 : "border-gray-200 bg-white hover:bg-gray-50"
                             }`}
                           >
-                            <svg viewBox="0 0 120 40" className="h-7 w-auto select-none">
-                              <rect width="120" height="40" rx="8" fill="#8c3494" />
-                              <path d="M18 10 L24 16 L18 28 L12 28 Z" fill="#ffffff" />
-                              <path d="M18 10 L21 18 L15 18 Z" fill="#ffcc00" />
-                              <text x="38" y="26" fill="#ffffff" fontSize="13" fontWeight="900" fontFamily="sans-serif">Rocket</text>
-                            </svg>
+                            <Image
+                              src="/images/rocket.png"
+                              alt="Rocket"
+                              width={120}
+                              height={40}
+                              className="h-8 w-auto object-contain select-none"
+                            />
                           </button>
                         </div>
 
@@ -664,7 +681,7 @@ export default function CheckoutPage() {
                       </div>
 
                       <div className="text-right font-black text-gray-900">
-                        {convertPrice(item.priceUSD * item.quantity, currency)} {currencySymbol}
+                        {language === "en" ? convertPrice(item.priceUSD * item.quantity, currency) : toBanglaDigits(convertPrice(item.priceUSD * item.quantity, currency))} {currencySymbol}
                       </div>
                     </div>
                   ))}
@@ -674,17 +691,17 @@ export default function CheckoutPage() {
                 <div className="border-t border-gray-100 pt-4 space-y-3.5 text-xs md:text-sm">
                   <div className="flex justify-between font-bold text-gray-500">
                     <span>{language === "en" ? "Subtotal" : "সাবটোটাল"}</span>
-                    <span className="text-gray-800 font-black">{displaySubtotal.toFixed(2)} {currencySymbol}</span>
+                    <span className="text-gray-800 font-black">{language === "en" ? displaySubtotal.toFixed(2) : toBanglaDigits(displaySubtotal.toFixed(2))} {currencySymbol}</span>
                   </div>
 
                   <div className="flex justify-between font-bold text-gray-500">
                     <span>{language === "en" ? "Shipping Cost" : "শিপিং চার্জ"}</span>
-                    <span className="text-gray-800 font-black">+{displayShipping.toFixed(2)} {currencySymbol}</span>
+                    <span className="text-gray-800 font-black">+{language === "en" ? displayShipping.toFixed(2) : toBanglaDigits(displayShipping.toFixed(2))} {currencySymbol}</span>
                   </div>
 
                   <div className="border-t border-gray-100 pt-3.5 flex justify-between font-black text-base text-gray-900">
                     <span>{language === "en" ? "Total Due" : "সর্বমোট বিল"}</span>
-                    <span className="text-[#740108] text-lg font-black">{displayTotal} {currencySymbol}</span>
+                    <span className="text-[#740108] text-lg font-black">{language === "en" ? displayTotal : toBanglaDigits(displayTotal)} {currencySymbol}</span>
                   </div>
                 </div>
 

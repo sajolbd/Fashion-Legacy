@@ -52,7 +52,7 @@ export default function FlashSale({ products, activeCategory = "all", onOpenDeta
   // Filter products by the selected category dynamically
   const filteredProducts = activeCategory === "all"
     ? products
-    : products.filter((prod) => prod.category === activeCategory);
+    : products.filter((prod) => Array.isArray(prod.category) ? prod.category.includes(activeCategory) : prod.category === activeCategory);
 
   // Take up to 4 items from the filtered list, falling back to mock defaults if empty
   const flashSaleItems = filteredProducts.length > 0 

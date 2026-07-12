@@ -25,7 +25,7 @@ export default function Home() {
 }
 
 function HomeContent() {
-  const { language, t, products, isLoadingProducts } = useLanguage();
+  const { language, t, products, isLoadingProducts, categories: apiCategories } = useLanguage();
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
 
@@ -50,21 +50,25 @@ function HomeContent() {
     );
   }
 
-  // Fordeal circular category quick selectors
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
+  // Fordeal circular category quick selectors mapped dynamically
   const categories = [
     { key: "all", labelEn: "All Items", labelBn: "সব পণ্য", image: "/images/categories/all.png" },
-    { key: "cat_hot", labelEn: "Hot Sale", labelBn: "হট সেল", image: "/images/categories/hot.png" },
-    { key: "cat_women", labelEn: "Women", labelBn: "মহিলাদের", image: "/images/categories/women.png" },
-    { key: "cat_men", labelEn: "Men", labelBn: "পুরুষদের", image: "/images/categories/men.png" },
-    { key: "cat_shoes", labelEn: "Shoes", labelBn: "জুতো", image: "/images/categories/shoes.png" },
-    { key: "cat_watches", labelEn: "Watches", labelBn: "ঘড়ি", image: "/images/categories/watches.png" },
-    { key: "cat_kids", labelEn: "Kids", labelBn: "বাচ্চাদের", image: "/images/categories/kids.png" }
+    ...apiCategories.map(cat => ({
+      key: cat.id,
+      labelEn: cat.nameEn,
+      labelBn: cat.nameBn,
+      image: cat.image && cat.image.startsWith("/") && !cat.image.startsWith("/images/")
+        ? `${apiBaseUrl}${cat.image}`
+        : (cat.image || "/images/categories/all.png")
+    }))
   ];
 
   // Filter & Sort Products
   const filteredProducts = products.filter((prod) => {
     if (activeCategory === "all") return true;
-    return prod.category === activeCategory;
+    return Array.isArray(prod.category) ? prod.category.includes(activeCategory) : prod.category === activeCategory;
   });
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {

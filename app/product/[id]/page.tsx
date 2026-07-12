@@ -82,10 +82,13 @@ export default function ProductDetailPage() {
     return numStr.replace(/\d/g, (d) => banglaDigits[parseInt(d)]);
   };
 
-  // Get related products
-  const relatedProducts = products.filter(
-    (p) => p.category === product.category && p.id !== product.id
-  ).slice(0, 4);
+  // Get related products (sharing at least one category)
+  const relatedProducts = products.filter((p) => {
+    if (p.id === product.id) return false;
+    const pCats = Array.isArray(p.category) ? p.category : [p.category || "cat_hot"];
+    const prodCats = Array.isArray(product.category) ? product.category : [product.category || "cat_hot"];
+    return pCats.some(cat => prodCats.includes(cat));
+  }).slice(0, 4);
 
   return (
     <Container className="pt-6">
