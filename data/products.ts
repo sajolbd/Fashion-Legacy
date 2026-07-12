@@ -25,9 +25,9 @@ export interface Product {
 }
 
 export const CURRENCIES = [
-  { code: "USD", symbol: "$", rate: 1, label: "USD ($)" },
-  { code: "BDT", symbol: "৳", rate: 120, label: "BDT (৳)" },
-  { code: "SAR", symbol: "SR", rate: 3.75, label: "SAR (SR)" }
+  { code: "BDT", symbol: "৳", rate: 1, label: "BDT (৳)" },
+  { code: "USD", symbol: "$", rate: 1 / 120, label: "USD ($)" },
+  { code: "SAR", symbol: "SR", rate: 3.75 / 120, label: "SAR (SR)" }
 ] as const;
 
 export function convertPrice(priceUSD: number, currency: string) {
