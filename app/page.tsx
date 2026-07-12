@@ -108,11 +108,9 @@ function HomeContent() {
                     ? "border-2 border-[#740108] scale-110 shadow-md ring-4 ring-red-50/80 bg-white"
                     : "bg-white border border-gray-100 hover:border-gray-300 hover:shadow-md group-hover:scale-105"
                 }`}>
-                  <Image
+                  <img
                     src={cat.image}
                     alt={cat.labelEn}
-                    width={80}
-                    height={80}
                     className={`w-full h-full object-cover transition-transform duration-300 ${
                       activeCategory === cat.key ? "scale-100" : "scale-95 group-hover:scale-100"
                     }`}
