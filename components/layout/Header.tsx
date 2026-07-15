@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { getProductImageUrl } from "../../data/products";
+import { getProductImageUrl, getCurrencySymbol, convertPrice } from "../../data/products";
 
 // Mock Cart Item Type
 interface CartItem {
@@ -103,12 +103,7 @@ function BDFlag({ className = "w-5 h-3.5" }: { className?: string }) {
   );
 }
 
-// Currency Symbol & Conversion Rates (Base: USD)
-const CURRENCIES = [
-  { code: "USD", symbol: "$", rate: 1, label: "USD ($)" },
-  { code: "BDT", symbol: "৳", rate: 120, label: "BDT (৳)" },
-  { code: "SAR", symbol: "SR", rate: 3.75, label: "SAR (SR)" }
-] as const;
+
 
 export default function Header() {
   const { 
@@ -185,17 +180,7 @@ export default function Header() {
     }
   }, [isMobileMenuOpen, isCartOpen, isSearchOpen]);
 
-  // Helper: Currency Converter
-  const getCurrencySymbol = () => {
-    const currObj = CURRENCIES.find(c => c.code === currency);
-    return currObj ? currObj.symbol : "$";
-  };
 
-  const convertPrice = (usdAmount: number) => {
-    const currObj = CURRENCIES.find(c => c.code === currency);
-    const rate = currObj ? currObj.rate : 1;
-    return (usdAmount * rate).toFixed(2);
-  };
 
   const totalCartQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -492,7 +477,7 @@ export default function Header() {
                         
                         <div className="flex items-center justify-between mt-2">
                           <span className="text-sm font-bold text-[#D4A017]">
-                            {getCurrencySymbol()}{convertPrice(item.priceUSD)}
+                            {getCurrencySymbol(currency)}{convertPrice(item.priceUSD, currency)}
                           </span>
 
                           {/* Quantity Selector */}
@@ -555,7 +540,7 @@ export default function Header() {
                     <div className="flex justify-between text-sm text-gray-500">
                       <span>{t("subtotal")}</span>
                       <span className="font-semibold text-gray-800">
-                        {getCurrencySymbol()}{convertPrice(cartSubtotal)}
+                        {getCurrencySymbol(currency)}{convertPrice(cartSubtotal, currency)}
                       </span>
                     </div>
                     <div className="flex justify-between text-sm text-gray-500">
@@ -567,7 +552,7 @@ export default function Header() {
                     <div className="border-t border-gray-200/60 pt-2 flex justify-between text-base font-bold text-gray-900">
                       <span>Total</span>
                       <span className="text-lg text-[#D4A017]">
-                        {getCurrencySymbol()}{convertPrice(cartSubtotal)}
+                        {getCurrencySymbol(currency)}{convertPrice(cartSubtotal, currency)}
                       </span>
                     </div>
                   </div>
