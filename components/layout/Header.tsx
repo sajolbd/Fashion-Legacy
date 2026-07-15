@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { getProductImageUrl } from "../../data/products";
 
 // Mock Cart Item Type
 interface CartItem {
@@ -469,7 +470,7 @@ export default function Header() {
                       
                       {/* Product Image */}
                       <Image 
-                        src={item.image} 
+                        src={getProductImageUrl(item.image)} 
                         alt={language === "en" ? item.nameEn : item.nameBn} 
                         width={80}
                         height={80}

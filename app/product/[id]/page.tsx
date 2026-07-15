@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { notFound, useParams } from "next/navigation";
 import Container from "../../../components/shared/Container";
-import { convertPrice, getCurrencySymbol } from "../../../data/products";
+import { convertPrice, getCurrencySymbol, getProductImageUrl } from "../../../data/products";
 import { useLanguage } from "../../../context/LanguageContext";
 import ProductCard from "../../../components/home/ProductCard";
 import Image from "next/image";
@@ -69,7 +69,7 @@ export default function ProductDetailPage() {
       nameEn: product.nameEn,
       nameBn: product.nameBn,
       priceUSD: discountedPrice,
-      image: product.images[activeImageIndex] || product.images[0],
+      image: getProductImageUrl(product.images[activeImageIndex] || product.images[0]),
       size: selectedSize || "One Size",
       colorEn: activeColor?.nameEn || "Default",
       colorBn: activeColor?.nameBn || "ডিফল্ট",
@@ -106,7 +106,7 @@ export default function ProductDetailPage() {
               }`}
             >
               <Image
-                src={img}
+                src={getProductImageUrl(img)}
                 alt={`thumb-${idx}`}
                 fill
                 sizes="80px"
@@ -119,7 +119,7 @@ export default function ProductDetailPage() {
         {/* MIDDLE COLUMN: Main Large Image */}
         <div className="col-span-1 lg:col-span-6 relative aspect-[3/4] max-h-[600px] rounded-3xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50">
           <Image
-            src={product.images[activeImageIndex]}
+            src={getProductImageUrl(product.images[activeImageIndex])}
             alt={activeName}
             fill
             priority
@@ -144,7 +144,7 @@ export default function ProductDetailPage() {
               }`}
             >
               <Image
-                src={img}
+                src={getProductImageUrl(img)}
                 alt={`thumb-mobile-${idx}`}
                 fill
                 sizes="64px"
@@ -214,7 +214,7 @@ export default function ProductDetailPage() {
                   }`}
                 >
                   <Image
-                    src={img}
+                    src={getProductImageUrl(img)}
                     alt={`style-${idx}`}
                     fill
                     sizes="48px"

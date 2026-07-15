@@ -41,6 +41,28 @@ export function getCurrencySymbol(currency: string) {
   return currObj ? currObj.symbol : "$";
 }
 
+export function getProductImageUrl(src: string) {
+  if (!src) return "/images/logo.png";
+  if (src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
+    return src;
+  }
+  
+  // Resolve backend uploaded files to absolute URLs
+  if (src.startsWith("/uploads/")) {
+    const rawApiUrl = 
+      process.env.NEXT_PUBLIC_API_URL || 
+      (typeof window !== "undefined"
+        ? (window.location.hostname.includes("fashionlegacy.live") 
+            ? "https://fashion-legacy-backend.vercel.app" 
+            : `http://${window.location.hostname}:5000`)
+        : "http://localhost:5000");
+    const apiBaseUrl = rawApiUrl.endsWith("/") ? rawApiUrl.slice(0, -1) : rawApiUrl;
+    return `${apiBaseUrl}${src}`;
+  }
+  
+  return src;
+}
+
 export const PRODUCTS: Product[] = [
   /* ================== CAT_HOT (HOT SALE) ================== */
   // {

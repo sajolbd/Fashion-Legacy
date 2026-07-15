@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Zap } from "lucide-react";
-import { Product, convertPrice, getCurrencySymbol } from "../../data/products";
+import { Product, convertPrice, getCurrencySymbol, getProductImageUrl } from "../../data/products";
 import { useLanguage } from "../../context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -145,7 +145,7 @@ export default function FlashSale({ products, activeCategory = "all", onOpenDeta
                 {/* Product Image */}
                 <div className="relative aspect-square bg-gray-50 rounded-xl overflow-hidden mb-3">
                   <Image
-                    src={item.images[0]}
+                    src={getProductImageUrl(item.images[0])}
                     alt={activeName}
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"

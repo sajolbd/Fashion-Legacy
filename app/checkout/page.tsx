@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import Container from "../../components/shared/Container";
 import { useLanguage } from "../../context/LanguageContext";
-import { convertPrice, getCurrencySymbol } from "../../data/products";
+import { convertPrice, getCurrencySymbol, getProductImageUrl } from "../../data/products";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, ShieldCheck, CreditCard, Truck, Phone, MapPin, User, ChevronRight, AlertCircle } from "lucide-react";
@@ -661,7 +661,7 @@ export default function CheckoutPage() {
                     <div key={item.id} className="flex gap-3 text-xs md:text-sm">
                       <div className="relative w-12 h-16 rounded-lg overflow-hidden bg-gray-50 border border-gray-100 flex-shrink-0">
                         <Image
-                          src={item.image}
+                          src={getProductImageUrl(item.image)}
                           alt={item.nameEn}
                           fill
                           sizes="48px"

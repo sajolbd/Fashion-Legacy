@@ -5,7 +5,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Star, ShoppingCart, Eye } from "lucide-react";
-import { Product, convertPrice, getCurrencySymbol } from "../../data/products";
+import { Product, convertPrice, getCurrencySymbol, getProductImageUrl } from "../../data/products";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 
@@ -36,7 +36,7 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
       nameEn: product.nameEn,
       nameBn: product.nameBn,
       priceUSD: discountedPrice,
-      image: product.images[0],
+      image: getProductImageUrl(product.images[0]),
       size: product.sizes[0] || "One Size",
       colorEn: product.colors[0]?.nameEn || "Default",
       colorBn: product.colors[0]?.nameBn || "ডিফল্ট"
@@ -54,7 +54,7 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
         {/* Product Image Section */}
         <div className="relative aspect-[4/5] bg-gray-50 overflow-hidden flex-shrink-0">
           <Image
-            src={product.images[0]}
+            src={getProductImageUrl(product.images[0])}
             alt={activeName}
             fill
             sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"

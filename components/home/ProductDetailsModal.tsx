@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 import { X, Star, Plus, Minus, ShoppingCart, Truck, ShieldCheck, RefreshCw } from "lucide-react";
-import { Product, convertPrice, getCurrencySymbol } from "../../data/products";
+import { Product, convertPrice, getCurrencySymbol, getProductImageUrl } from "../../data/products";
 import { useLanguage } from "../../context/LanguageContext";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -57,7 +57,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
       nameEn: product.nameEn,
       nameBn: product.nameBn,
       priceUSD: discountedPrice,
-      image: product.images[activeImageIndex] || product.images[0],
+      image: getProductImageUrl(product.images[activeImageIndex] || product.images[0]),
       size: selectedSize || "One Size",
       colorEn: activeColor?.nameEn || "Default",
       colorBn: activeColor?.nameBn || "ডিফল্ট",
@@ -113,7 +113,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
                 <div className="md:col-span-10 relative aspect-[4/5] bg-gray-50 rounded-2xl overflow-hidden border border-gray-100">
                   <Image
-                    src={product.images[activeImageIndex]}
+                    src={getProductImageUrl(product.images[activeImageIndex])}
                     alt={activeName}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -137,7 +137,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                       }`}
                     >
                       <Image
-                        src={img}
+                        src={getProductImageUrl(img)}
                         alt={`thumbnail-${idx}`}
                         fill
                         sizes="64px"
