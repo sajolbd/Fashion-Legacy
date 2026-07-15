@@ -63,7 +63,7 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
 
           {/* Discount Badge */}
           {product.discountPercent > 0 && (
-            <span className="absolute top-3 left-3 bg-[#740108] text-white text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-md shadow-sm">
+            <span className="absolute top-3 left-3 bg-[#D4A017] text-white text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-md shadow-sm">
               -{product.discountPercent}%
             </span>
           )}
@@ -71,14 +71,14 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
           {/* Hover Action Overlay */}
           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
             <div 
-              className="p-3 bg-white text-[#740108] hover:bg-[#740108] hover:text-white rounded-full transition-colors shadow-md"
+              className="p-3 bg-white text-[#D4A017] hover:bg-[#D4A017] hover:text-white rounded-full transition-colors shadow-md"
               aria-label="View Details"
             >
               <Eye size={18} />
             </div>
             <button 
               onClick={handleQuickAdd}
-              className="p-3 bg-[#740108] text-white hover:bg-[#5c0006] rounded-full transition-colors shadow-md"
+              className="p-3 bg-[#D4A017] text-white hover:bg-[#5c0006] rounded-full transition-colors shadow-md"
               aria-label="Add to Cart"
             >
               <ShoppingCart size={18} />
@@ -97,7 +97,7 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
             </span>
 
             {/* Product Title */}
-            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-[#740108] transition-colors line-clamp-2 leading-tight">
+            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-[#D4A017] transition-colors line-clamp-2 leading-tight">
               {activeName}
             </h3>
           </div>
@@ -120,7 +120,7 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
 
             {/* Pricing */}
             <div className="flex items-baseline gap-2">
-              <span className="text-base font-extrabold text-[#740108]">
+              <span className="text-base font-extrabold text-[#D4A017]">
                 {currencySymbol}{displayActivePrice}
               </span>
               {product.discountPercent > 0 && (

@@ -217,7 +217,7 @@ export default function Header() {
               {/* Mobile Hamburger Button */}
               <button 
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="md:hidden p-2 -ml-2 text-gray-800 hover:text-[#740108] transition-colors"
+                className="md:hidden p-2 -ml-2 text-gray-800 hover:text-[#D4A017] transition-colors"
                 aria-label="Toggle Menu"
               >
                 <Menu size={24} />
@@ -246,11 +246,11 @@ export default function Header() {
                 onMouseEnter={() => setIsHomeHovered(true)}
                 onMouseLeave={() => setIsHomeHovered(false)}
               >
-                <Link href="/" className="flex items-center gap-1 hover:text-[#740108] transition-colors">
+                <Link href="/" className="flex items-center gap-1 hover:text-[#D4A017] transition-colors">
                   <span>{t("home")}</span>
-                  <ChevronDown size={14} className="text-gray-400 group-hover:text-[#740108] transition-transform group-hover:rotate-180 duration-200" />
+                  <ChevronDown size={14} className="text-gray-400 group-hover:text-[#D4A017] transition-transform group-hover:rotate-180 duration-200" />
                 </Link>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#740108] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#D4A017] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
                 
                 {/* Dropdown Menu Wrapper with Soft Animation */}
                 <AnimatePresence>
@@ -266,10 +266,10 @@ export default function Header() {
                         <Link 
                           key={item.key}
                           href={item.href}
-                          className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50/50 hover:text-[#740108] rounded-xl transition-all font-semibold group/subitem"
+                          className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50/50 hover:text-[#D4A017] rounded-xl transition-all font-semibold group/subitem"
                         >
                           <span>{t(item.key)}</span>
-                          <span className="text-[9px] text-gray-400 font-bold bg-gray-50 border border-gray-200 group-hover/subitem:bg-red-100 group-hover/subitem:text-[#740108] group-hover/subitem:border-orange-200 px-1.5 py-0.5 rounded transition-colors uppercase">
+                          <span className="text-[9px] text-gray-400 font-bold bg-gray-50 border border-gray-200 group-hover/subitem:bg-red-100 group-hover/subitem:text-[#D4A017] group-hover/subitem:border-orange-200 px-1.5 py-0.5 rounded transition-colors uppercase">
                             {language === "en" ? item.tagEn : item.tagBn}
                           </span>
                         </Link>
@@ -281,10 +281,10 @@ export default function Header() {
 
               <Link 
                 href={isAuthenticated ? "/orders" : "/auth?redirect=/orders"} 
-                className="relative py-2 hover:text-[#740108] transition-colors group"
+                className="relative py-2 hover:text-[#D4A017] transition-colors group"
               >
                 {t("orders")}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#740108] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#D4A017] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
               </Link>
             </nav>
 
@@ -318,7 +318,7 @@ export default function Header() {
                           <USFlag className="w-5 h-3.5" />
                           <span>English</span>
                         </div>
-                        {language === "en" && <Check size={12} className="text-[#740108]" />}
+                        {language === "en" && <Check size={12} className="text-[#D4A017]" />}
                       </button>
                       <button 
                         onClick={() => { setLanguage("bn"); setIsLangDropdownOpen(false); }}
@@ -328,7 +328,7 @@ export default function Header() {
                           <BDFlag className="w-5 h-3.5" />
                           <span>বাংলা</span>
                         </div>
-                        {language === "bn" && <Check size={12} className="text-[#740108]" />}
+                        {language === "bn" && <Check size={12} className="text-[#D4A017]" />}
                       </button>
                     </motion.div>
                   )}
@@ -339,7 +339,7 @@ export default function Header() {
               {/* Search Toggle Button */}
               <button 
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className={`p-2 rounded-full transition-all duration-200 ${isSearchOpen ? 'bg-red-50 text-[#740108]' : 'text-gray-800 hover:bg-gray-50'}`}
+                className={`p-2 rounded-full transition-all duration-200 ${isSearchOpen ? 'bg-red-50 text-[#D4A017]' : 'text-gray-800 hover:bg-gray-50'}`}
                 aria-label="Search"
               >
                 <Search size={22} />
@@ -352,7 +352,7 @@ export default function Header() {
                 aria-label="Shopping Cart"
               >
                 <ShoppingCart size={22} />
-                <span className="absolute top-0.5 right-0.5 w-5 h-5 bg-[#740108] text-white text-[10px] font-bold flex items-center justify-center rounded-full border-2 border-white shadow-sm">
+                <span className="absolute top-0.5 right-0.5 w-5 h-5 bg-[#D4A017] text-white text-[10px] font-bold flex items-center justify-center rounded-full border-2 border-white shadow-sm">
                   {totalCartQuantity}
                 </span>
               </button>
@@ -394,7 +394,7 @@ export default function Header() {
               className="absolute left-0 right-0 bg-white border-t border-gray-200 shadow-xl overflow-hidden z-30"
             >
               <div className="max-w-3xl mx-auto px-6 py-6 md:py-8">
-                <div className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 focus-within:ring-2 focus-within:ring-red-500/20 focus-within:border-[#740108] transition-all">
+                <div className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 focus-within:ring-2 focus-within:ring-red-500/20 focus-within:border-[#D4A017] transition-all">
                   <Search size={20} className="text-gray-400" />
                   <input 
                     ref={searchInputRef}
@@ -412,7 +412,7 @@ export default function Header() {
                       <X size={14} />
                     </button>
                   )}
-                  <button className="bg-[#740108] text-white text-xs md:text-sm font-semibold px-4 py-1.5 rounded-lg hover:bg-[#5c0006] transition-colors shadow-sm">
+                  <button className="bg-[#D4A017] text-white text-xs md:text-sm font-semibold px-4 py-1.5 rounded-lg hover:bg-[#5c0006] transition-colors shadow-sm">
                     {t("searchButton")}
                   </button>
                 </div>
@@ -447,9 +447,9 @@ export default function Header() {
               {/* Cart Header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
                 <div className="flex items-center gap-2">
-                  <ShoppingCart size={20} className="text-[#740108]" />
+                  <ShoppingCart size={20} className="text-[#D4A017]" />
                   <h3 className="font-bold text-lg text-gray-900">{t("cartTitle")}</h3>
-                  <span className="text-xs font-semibold bg-red-50 text-[#740108] px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-semibold bg-red-50 text-[#D4A017] px-2 py-0.5 rounded-full">
                     {totalCartQuantity} {t("items")}
                   </span>
                 </div>
@@ -490,7 +490,7 @@ export default function Header() {
                         </div>
                         
                         <div className="flex items-center justify-between mt-2">
-                          <span className="text-sm font-bold text-[#740108]">
+                          <span className="text-sm font-bold text-[#D4A017]">
                             {getCurrencySymbol()}{convertPrice(item.priceUSD)}
                           </span>
 
@@ -528,7 +528,7 @@ export default function Header() {
                 ) : (
                   /* Empty State */
                   <div className="h-full flex flex-col items-center justify-center text-center space-y-4">
-                    <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center text-[#740108]">
+                    <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center text-[#D4A017]">
                       <ShoppingCart size={28} />
                     </div>
                     <div>
@@ -539,7 +539,7 @@ export default function Header() {
                     </div>
                     <button 
                       onClick={() => setIsCartOpen(false)}
-                      className="bg-[#740108] hover:bg-[#5c0006] text-white text-xs font-bold px-6 py-2.5 rounded-lg shadow-sm transition-colors"
+                      className="bg-[#D4A017] hover:bg-[#5c0006] text-white text-xs font-bold px-6 py-2.5 rounded-lg shadow-sm transition-colors"
                     >
                       {t("startShopping")}
                     </button>
@@ -565,7 +565,7 @@ export default function Header() {
                     </div>
                     <div className="border-t border-gray-200/60 pt-2 flex justify-between text-base font-bold text-gray-900">
                       <span>Total</span>
-                      <span className="text-lg text-[#740108]">
+                      <span className="text-lg text-[#D4A017]">
                         {getCurrencySymbol()}{convertPrice(cartSubtotal)}
                       </span>
                     </div>
@@ -574,7 +574,7 @@ export default function Header() {
                   <Link 
                     href="/checkout" 
                     onClick={() => setIsCartOpen(false)}
-                    className="w-full bg-[#740108] hover:bg-[#5c0006] text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-red-500/10 hover:shadow-red-500/20 transition-all group justify-center text-center"
+                    className="w-full bg-[#D4A017] hover:bg-[#5c0006] text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-red-500/10 hover:shadow-red-500/20 transition-all group justify-center text-center"
                   >
                     <span>{t("checkout")}</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -632,21 +632,21 @@ export default function Header() {
                   <Link 
                     href="/" 
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2.5 px-3 rounded-lg text-sm font-semibold text-gray-800 hover:bg-red-50 hover:text-[#740108] transition-all"
+                    className="block py-2.5 px-3 rounded-lg text-sm font-semibold text-gray-800 hover:bg-red-50 hover:text-[#D4A017] transition-all"
                   >
                     {t("home")}
                   </Link>
                   <Link 
                     href="/orders" 
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2.5 px-3 rounded-lg text-sm font-semibold text-gray-800 hover:bg-red-50 hover:text-[#740108] transition-all"
+                    className="block py-2.5 px-3 rounded-lg text-sm font-semibold text-gray-800 hover:bg-red-50 hover:text-[#D4A017] transition-all"
                   >
                     {t("orders")}
                   </Link>
                   <Link 
                     href="/profile" 
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2.5 px-3 rounded-lg text-sm font-semibold text-gray-800 hover:bg-red-50 hover:text-[#740108] transition-all"
+                    className="block py-2.5 px-3 rounded-lg text-sm font-semibold text-gray-800 hover:bg-red-50 hover:text-[#D4A017] transition-all"
                   >
                     {language === "en" ? "My Profile" : "আমার প্রোফাইল"}
                   </Link>
@@ -665,7 +665,7 @@ export default function Header() {
                         onClick={() => setLanguage("en")}
                         className={`py-1.5 text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1.5 ${
                           language === "en" 
-                            ? "bg-white text-[#740108] shadow-sm" 
+                            ? "bg-white text-[#D4A017] shadow-sm" 
                             : "text-gray-600 hover:text-gray-900"
                         }`}
                       >
@@ -676,7 +676,7 @@ export default function Header() {
                         onClick={() => setLanguage("bn")}
                         className={`py-1.5 text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1.5 ${
                           language === "bn" 
-                            ? "bg-white text-[#740108] shadow-sm" 
+                            ? "bg-white text-[#D4A017] shadow-sm" 
                             : "text-gray-600 hover:text-gray-900"
                         }`}
                       >

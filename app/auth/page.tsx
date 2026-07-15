@@ -14,7 +14,7 @@ export default function AuthPage() {
   return (
     <Suspense fallback={
       <div className="flex justify-center items-center min-h-[50vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#740108] border-t-transparent"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#D4A017] border-t-transparent"></div>
       </div>
     }>
       <AuthContent />
@@ -185,15 +185,15 @@ function AuthContent() {
 
         {/* MOCK CREDS AUTOFILL */}
         {activeTab === "login" && (
-          <div className="bg-[#740108]/5 border border-[#740108]/10 rounded-2xl p-4 text-xs font-bold text-gray-700 flex justify-between items-center gap-3">
+          <div className="bg-[#D4A017]/5 border border-[#D4A017]/10 rounded-2xl p-4 text-xs font-bold text-gray-700 flex justify-between items-center gap-3">
             <div className="space-y-0.5">
-              <span className="block text-[10px] uppercase text-[#740108] font-black">{t.mockCreds}</span>
+              <span className="block text-[10px] uppercase text-[#D4A017] font-black">{t.mockCreds}</span>
               <span className="block text-gray-500 font-mono">user@fashionlegacy.com</span>
             </div>
             <button
               type="button"
               onClick={handleAutofill}
-              className="bg-[#740108] hover:bg-[#5c0006] text-white font-extrabold px-3 py-1.5 rounded-lg text-[10px] uppercase transition-colors"
+              className="bg-[#D4A017] hover:bg-[#5c0006] text-white font-extrabold px-3 py-1.5 rounded-lg text-[10px] uppercase transition-colors"
             >
               {language === "en" ? "Autofill" : "অটোফিল"}
             </button>
@@ -221,7 +221,7 @@ function AuthContent() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className={`w-full bg-gray-50 border rounded-xl pl-9 pr-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
-                      errors.name ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#740108] focus:bg-white"
+                      errors.name ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#D4A017] focus:bg-white"
                     }`}
                   />
                 </div>
@@ -243,7 +243,7 @@ function AuthContent() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className={`w-full bg-gray-50 border rounded-xl pl-9 pr-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
-                      errors.phone ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#740108] focus:bg-white"
+                      errors.phone ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#D4A017] focus:bg-white"
                     }`}
                   />
                 </div>
@@ -268,7 +268,7 @@ function AuthContent() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={`w-full bg-gray-50 border rounded-xl pl-9 pr-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
-                  errors.email ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#740108] focus:bg-white"
+                  errors.email ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#D4A017] focus:bg-white"
                 }`}
               />
             </div>
@@ -290,7 +290,7 @@ function AuthContent() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className={`w-full bg-gray-50 border rounded-xl pl-9 pr-10 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
-                  errors.password ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#740108] focus:bg-white"
+                  errors.password ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#D4A017] focus:bg-white"
                 }`}
               />
               <button
@@ -308,7 +308,7 @@ function AuthContent() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#740108] hover:bg-[#5c0006] text-white py-3 rounded-xl font-black text-xs md:text-sm tracking-wide shadow-md transition-all uppercase flex items-center justify-center gap-2 select-none"
+            className="w-full bg-[#D4A017] hover:bg-[#5c0006] text-white py-3 rounded-xl font-black text-xs md:text-sm tracking-wide shadow-md transition-all uppercase flex items-center justify-center gap-2 select-none"
           >
             {loading ? (
               <>
@@ -332,7 +332,7 @@ function AuthContent() {
                   setActiveTab("signup");
                   setErrors({});
                 }}
-                className="text-[#740108] hover:underline"
+                className="text-[#D4A017] hover:underline"
               >
                 {t.signupTab}
               </button>
@@ -345,7 +345,7 @@ function AuthContent() {
                   setActiveTab("login");
                   setErrors({});
                 }}
-                className="text-[#740108] hover:underline"
+                className="text-[#D4A017] hover:underline"
               >
                 {t.loginTab}
               </button>

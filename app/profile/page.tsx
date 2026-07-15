@@ -160,7 +160,7 @@ export default function ProfilePage() {
 
         <button
           onClick={handleLogout}
-          className="inline-flex bg-gray-50 hover:bg-[#740108] text-gray-500 hover:text-white font-extrabold text-xs md:text-sm py-2.5 px-5 rounded-xl border border-gray-200 hover:border-transparent transition-all items-center gap-1.5 uppercase select-none"
+          className="inline-flex bg-gray-50 hover:bg-[#D4A017] text-gray-500 hover:text-white font-extrabold text-xs md:text-sm py-2.5 px-5 rounded-xl border border-gray-200 hover:border-transparent transition-all items-center gap-1.5 uppercase select-none"
         >
           <LogOut size={15} />
           <span>{t.logoutBtn}</span>
@@ -172,7 +172,7 @@ export default function ProfilePage() {
         {/* LEFT COLUMN: EDIT PROFILE DETAILS */}
         <form onSubmit={handleSave} className="col-span-1 lg:col-span-7 bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-sm space-y-6">
           <h2 className="text-sm font-extrabold text-gray-800 uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 pb-3">
-            <User size={16} className="text-[#740108]" />
+            <User size={16} className="text-[#D4A017]" />
             <span>{t.editProfile}</span>
           </h2>
 
@@ -214,7 +214,7 @@ export default function ProfilePage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className={`w-full bg-gray-50 border rounded-xl pl-9 pr-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
-                    formErrors.name ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#740108] focus:bg-white"
+                    formErrors.name ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#D4A017] focus:bg-white"
                   }`}
                 />
               </div>
@@ -235,7 +235,7 @@ export default function ProfilePage() {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className={`w-full bg-gray-50 border rounded-xl pl-9 pr-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
-                    formErrors.phone ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#740108] focus:bg-white"
+                    formErrors.phone ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#D4A017] focus:bg-white"
                   }`}
                 />
               </div>
@@ -274,7 +274,7 @@ export default function ProfilePage() {
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   className={`w-full bg-gray-50 border rounded-xl pl-9 pr-4 py-2 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all resize-none ${
-                    formErrors.address ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#740108] focus:bg-white"
+                    formErrors.address ? "border-red-300 bg-red-50/20" : "border-gray-200 focus:border-[#D4A017] focus:bg-white"
                   }`}
                 />
               </div>
@@ -286,7 +286,7 @@ export default function ProfilePage() {
             <button
               type="submit"
               disabled={isSaving}
-              className="flex-1 bg-[#740108] hover:bg-[#5c0006] text-white h-11 rounded-xl font-black text-xs md:text-sm tracking-wide shadow-md transition-all uppercase flex items-center justify-center gap-1.5 disabled:opacity-50"
+              className="flex-1 bg-[#D4A017] hover:bg-[#5c0006] text-white h-11 rounded-xl font-black text-xs md:text-sm tracking-wide shadow-md transition-all uppercase flex items-center justify-center gap-1.5 disabled:opacity-50"
             >
               <Save size={15} />
               <span>{isSaving ? "Saving..." : t.saveBtn}</span>
@@ -304,7 +304,7 @@ export default function ProfilePage() {
         {/* RIGHT COLUMN: ORDER HISTORY LIST */}
         <div className="col-span-1 lg:col-span-5 bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-sm space-y-6">
           <h2 className="text-sm font-extrabold text-gray-800 uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 pb-3">
-            <ShoppingBag size={16} className="text-[#740108]" />
+            <ShoppingBag size={16} className="text-[#D4A017]" />
             <span>{t.ordersTitle}</span>
           </h2>
 
@@ -349,7 +349,7 @@ export default function ProfilePage() {
 
                   <div className="flex justify-between items-center pt-1.5 border-t border-gray-200/40 text-gray-900">
                     <span className="font-bold text-gray-400 uppercase text-[9px]">{t.orderTotal} ({ord.itemsCount} {language === "en" ? "items" : "টি"})</span>
-                    <span className="font-black text-[#740108] text-sm">{convertPrice(ord.total, currency)} {getCurrencySymbol(currency)}</span>
+                    <span className="font-black text-[#D4A017] text-sm">{convertPrice(ord.total, currency)} {getCurrencySymbol(currency)}</span>
                   </div>
 
                 </div>

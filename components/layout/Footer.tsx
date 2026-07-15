@@ -108,17 +108,17 @@ export default function Footer() {
             {/* Contact Details */}
             <div className="space-y-3 pt-2 text-xs md:text-sm">
               <div className="flex items-start gap-3">
-                <Phone size={16} className="text-[#740108] mt-0.5 flex-shrink-0" />
+                <Phone size={16} className="text-[#D4A017] mt-0.5 flex-shrink-0" />
                 <div>
                   <span className="block text-[10px] font-bold text-gray-500 uppercase">{t.phoneLabel}</span>
-                  <a href="tel:01307102810" className="font-extrabold text-white hover:text-[#740108] transition-colors">
+                  <a href="tel:01307102810" className="font-extrabold text-white hover:text-[#D4A017] transition-colors">
                     {language === "en" ? "+880 1307-102810" : "+৮৮০ ১৩০৭১-০২৮১০"}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail size={16} className="text-[#740108] mt-0.5 flex-shrink-0" />
+                <Mail size={16} className="text-[#D4A017] mt-0.5 flex-shrink-0" />
                 <div>
                   <span className="block text-[10px] font-bold text-gray-500 uppercase">{t.emailLabel}</span>
                   <a href="mailto:support@fashionlegacy.com" className="font-bold text-gray-300 hover:text-white transition-colors">
@@ -128,7 +128,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin size={16} className="text-[#740108] mt-0.5 flex-shrink-0" />
+                <MapPin size={16} className="text-[#D4A017] mt-0.5 flex-shrink-0" />
                 <div>
                   <span className="block text-[10px] font-bold text-gray-500 uppercase">{t.addressLabel}</span>
                   <span className="text-gray-400">{t.addressVal}</span>
@@ -256,16 +256,16 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors bg-gray-800/60 p-2 rounded-full hover:bg-[#740108]">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors bg-gray-800/60 p-2 rounded-full hover:bg-[#D4A017]">
               <Facebook size={16} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors bg-gray-800/60 p-2 rounded-full hover:bg-[#740108]">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors bg-gray-800/60 p-2 rounded-full hover:bg-[#D4A017]">
               <Instagram size={16} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors bg-gray-800/60 p-2 rounded-full hover:bg-[#740108]">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors bg-gray-800/60 p-2 rounded-full hover:bg-[#D4A017]">
               <Twitter size={16} />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors bg-gray-800/60 p-2 rounded-full hover:bg-[#740108]">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors bg-gray-800/60 p-2 rounded-full hover:bg-[#D4A017]">
               <Youtube size={16} />
             </a>
           </div>

@@ -90,13 +90,13 @@ export default function FlashSale({ products, activeCategory = "all", onOpenDeta
       {/* Header section with Timer */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-4">
         <div className="flex items-center gap-3">
-          <div className="bg-[#740108] text-white p-2 rounded-xl flex items-center justify-center animate-pulse">
+          <div className="bg-[#D4A017] text-white p-2 rounded-xl flex items-center justify-center animate-pulse">
             <Zap size={20} fill="currentColor" />
           </div>
           <div>
             <h2 className="text-lg md:text-xl font-black text-gray-900 tracking-tight uppercase flex items-center gap-2">
               <span>{language === "en" ? "Flash Sale" : "ফ্ল্যাশ সেল"}</span>
-              <span className="text-xs font-bold bg-[#740108]/10 text-[#740108] px-2 py-0.5 rounded-full lowercase">
+              <span className="text-xs font-bold bg-[#D4A017]/10 text-[#D4A017] px-2 py-0.5 rounded-full lowercase">
                 {language === "en" ? "hot deals" : "হট ডিল"}
               </span>
             </h2>
@@ -151,7 +151,7 @@ export default function FlashSale({ products, activeCategory = "all", onOpenDeta
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover"
                   />
-                  <span className="absolute top-2 left-2 bg-[#740108] text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
+                  <span className="absolute top-2 left-2 bg-[#D4A017] text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
                     -{item.discountPercent}%
                   </span>
                 </div>
@@ -163,7 +163,7 @@ export default function FlashSale({ products, activeCategory = "all", onOpenDeta
                   </h3>
 
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-sm font-extrabold text-[#740108]">
+                    <span className="text-sm font-extrabold text-[#D4A017]">
                       {currencySymbol}{convertPrice(discountPrice, currency)}
                     </span>
                     <span className="text-[10px] text-gray-400 line-through">

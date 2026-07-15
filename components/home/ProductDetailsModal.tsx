@@ -120,7 +120,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                     className="object-cover"
                   />
                   {product.discountPercent > 0 && (
-                    <span className="absolute top-4 left-4 bg-[#740108] text-white text-xs font-black px-2.5 py-1 rounded-md shadow-sm">
+                    <span className="absolute top-4 left-4 bg-[#D4A017] text-white text-xs font-black px-2.5 py-1 rounded-md shadow-sm">
                       -{product.discountPercent}% OFF
                     </span>
                   )}
@@ -133,7 +133,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                       key={idx}
                       onClick={() => setActiveImageIndex(idx)}
                       className={`relative w-16 h-20 md:w-full aspect-[4/5] bg-gray-50 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-all ${
-                        activeImageIndex === idx ? "border-[#740108] shadow" : "border-transparent opacity-70 hover:opacity-100"
+                        activeImageIndex === idx ? "border-[#D4A017] shadow" : "border-transparent opacity-70 hover:opacity-100"
                       }`}
                     >
                       <Image
@@ -175,7 +175,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
 
                 {/* Pricing section */}
                 <div className="flex items-baseline gap-3 py-3 border-y border-gray-100 bg-gray-50/50 px-4 rounded-xl">
-                  <span className="text-2xl font-extrabold text-[#740108]">
+                  <span className="text-2xl font-extrabold text-[#D4A017]">
                     {currencySymbol}{displayActivePrice}
                   </span>
                   {product.discountPercent > 0 && (
@@ -201,7 +201,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                           onClick={() => setSelectedSize(size)}
                           className={`min-w-[48px] h-10 px-3 border rounded-xl font-bold text-xs flex items-center justify-center transition-all ${
                             selectedSize === size
-                              ? "border-[#740108] bg-red-50 text-[#740108] shadow-sm"
+                              ? "border-[#D4A017] bg-red-50 text-[#D4A017] shadow-sm"
                               : "border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50"
                           }`}
                         >
@@ -229,7 +229,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                           key={idx}
                           onClick={() => setSelectedColorIndex(idx)}
                           className={`relative w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all ${
-                            selectedColorIndex === idx ? "border-[#740108] scale-110 shadow-sm" : "border-transparent hover:scale-105"
+                            selectedColorIndex === idx ? "border-[#D4A017] scale-110 shadow-sm" : "border-transparent hover:scale-105"
                           }`}
                         >
                           <span
@@ -274,7 +274,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                     onClick={() => setActiveTab("desc")}
                     className={`pb-3 text-sm font-bold border-b-2 px-4 transition-colors ${
                       activeTab === "desc"
-                        ? "border-[#740108] text-[#740108]"
+                        ? "border-[#D4A017] text-[#D4A017]"
                         : "border-transparent text-gray-400 hover:text-gray-700"
                     }`}
                   >
@@ -284,7 +284,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                     onClick={() => setActiveTab("features")}
                     className={`pb-3 text-sm font-bold border-b-2 px-4 transition-colors ${
                       activeTab === "features"
-                        ? "border-[#740108] text-[#740108]"
+                        ? "border-[#D4A017] text-[#D4A017]"
                         : "border-transparent text-gray-400 hover:text-gray-700"
                     }`}
                   >
@@ -308,7 +308,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
               {/* Shipping & Support badges */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-gray-100 text-xs font-semibold text-gray-500">
                 <div className="flex items-center gap-2 bg-gray-50 p-3 rounded-xl">
-                  <Truck size={16} className="text-[#740108]" />
+                  <Truck size={16} className="text-[#D4A017]" />
                   <span>
                     {language === "en" ? "Free Global Shipping" : "ফ্রি বৈশ্বিক শিপিং"}
                   </span>
@@ -332,7 +332,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
             <div className="p-6 border-t border-gray-100 sticky bottom-0 bg-white/95 backdrop-blur flex gap-4">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 bg-[#740108] hover:bg-[#5c0006] text-white h-12 rounded-xl font-bold flex items-center justify-center gap-2.5 shadow-lg shadow-red-500/10 hover:shadow-red-500/20 transition-all group"
+                className="flex-1 bg-[#D4A017] hover:bg-[#5c0006] text-white h-12 rounded-xl font-bold flex items-center justify-center gap-2.5 shadow-lg shadow-red-500/10 hover:shadow-red-500/20 transition-all group"
               >
                 <ShoppingCart size={18} className="group-hover:-translate-y-0.5 transition-transform" />
                 <span>

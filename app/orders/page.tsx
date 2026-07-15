@@ -100,7 +100,7 @@ export default function OrdersPage() {
                 {/* Visual indicator */}
                 <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all ${
                   step.active 
-                    ? "bg-[#740108] border-[#740108] text-white shadow-sm"
+                    ? "bg-[#D4A017] border-[#D4A017] text-white shadow-sm"
                     : "bg-white border-gray-200 text-gray-400"
                 }`}>
                   <Icon size={14} />
@@ -138,7 +138,7 @@ export default function OrdersPage() {
       </Link>
 
       <h1 className="text-xl md:text-2xl font-black text-gray-900 uppercase tracking-tight flex items-center gap-2">
-        <span className="w-2.5 h-6 bg-[#740108] rounded" />
+        <span className="w-2.5 h-6 bg-[#D4A017] rounded" />
         <span>{t.pageTitle}</span>
       </h1>
 
@@ -150,7 +150,7 @@ export default function OrdersPage() {
           <p className="text-sm text-gray-500 font-bold">{t.noOrders}</p>
           <Link
             href="/"
-            className="inline-block bg-[#740108] hover:bg-[#5c0006] text-white font-extrabold text-xs py-3 px-8 rounded-xl shadow-md transition-all uppercase"
+            className="inline-block bg-[#D4A017] hover:bg-[#5c0006] text-white font-extrabold text-xs py-3 px-8 rounded-xl shadow-md transition-all uppercase"
           >
             {t.goShopping}
           </Link>
@@ -228,7 +228,7 @@ export default function OrdersPage() {
                 {/* Items and Amount */}
                 <div className="space-y-1">
                   <span className="block text-[9px] uppercase tracking-wider text-gray-400">{t.totalPaid}</span>
-                  <span className="block text-sm font-black text-[#740108]">
+                  <span className="block text-sm font-black text-[#D4A017]">
                     {convertPrice(order.total, currency)} {getCurrencySymbol(currency)}
                   </span>
                   <span className="block text-[10px] text-gray-400 font-bold">
@@ -240,7 +240,7 @@ export default function OrdersPage() {
                 <div className="space-y-1">
                   <span className="block text-[9px] uppercase tracking-wider text-gray-400">{t.paymentMethod}</span>
                   <div className="flex items-center gap-1.5 text-gray-800 pt-0.5">
-                    <CreditCard size={14} className="text-[#740108]" />
+                    <CreditCard size={14} className="text-[#D4A017]" />
                     <span className="font-extrabold">{order.paymentMethod}</span>
                   </div>
                 </div>

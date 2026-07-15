@@ -163,7 +163,7 @@ export default function CheckoutPage() {
         </p>
         <Link 
           href="/" 
-          className="inline-flex bg-[#740108] hover:bg-[#5c0006] text-white font-extrabold text-sm py-3 px-8 rounded-xl shadow-md transition-all uppercase"
+          className="inline-flex bg-[#D4A017] hover:bg-[#5c0006] text-white font-extrabold text-sm py-3 px-8 rounded-xl shadow-md transition-all uppercase"
         >
           {language === "en" ? "Go Shopping" : "কেনাকাটা শুরু করুন"}
         </Link>
@@ -232,14 +232,14 @@ export default function CheckoutPage() {
 
             <div className="flex justify-between pt-1 text-base font-black text-gray-900">
               <span className="uppercase">{language === "en" ? "Total Paid" : "সর্বমোট বিল"}</span>
-              <span className="text-[#740108]">{language === "en" ? finalTotal : toBanglaDigits(finalTotal)}</span>
+              <span className="text-[#D4A017]">{language === "en" ? finalTotal : toBanglaDigits(finalTotal)}</span>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <Link 
               href="/" 
-              className="flex-1 bg-[#740108] hover:bg-[#5c0006] text-white font-extrabold text-xs md:text-sm py-3.5 rounded-xl shadow-md transition-all uppercase flex items-center justify-center gap-1.5"
+              className="flex-1 bg-[#D4A017] hover:bg-[#5c0006] text-white font-extrabold text-xs md:text-sm py-3.5 rounded-xl shadow-md transition-all uppercase flex items-center justify-center gap-1.5"
             >
               <span>{language === "en" ? "Continue Shopping" : "আরও কেনাকাটা করুন"}</span>
             </Link>
@@ -255,7 +255,7 @@ export default function CheckoutPage() {
           </Link>
 
           <h1 className="text-xl md:text-2xl font-black text-gray-900 uppercase tracking-tight flex items-center gap-2">
-            <span className="w-2.5 h-6 bg-[#740108] rounded" />
+            <span className="w-2.5 h-6 bg-[#D4A017] rounded" />
             <span>{language === "en" ? "Secure Checkout" : "নিরাপদ চেকআউট"}</span>
           </h1>
 
@@ -267,7 +267,7 @@ export default function CheckoutPage() {
               {/* 1. SHIPPING ADDRESS SECTION */}
               <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm space-y-4">
                 <h2 className="text-sm font-extrabold text-gray-800 uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 pb-3">
-                  <User size={16} className="text-[#740108]" />
+                  <User size={16} className="text-[#D4A017]" />
                   <span>{language === "en" ? "1. Shipping Information" : "১. শিপিংয়ের তথ্য প্রদান"}</span>
                 </h2>
 
@@ -284,7 +284,7 @@ export default function CheckoutPage() {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         className={`w-full bg-gray-50 border rounded-xl px-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
-                          formErrors.name ? "border-red-300 bg-red-50/20" : "border-gray-200 hover:border-gray-300 focus:border-[#740108] focus:bg-white"
+                          formErrors.name ? "border-red-300 bg-red-50/20" : "border-gray-200 hover:border-gray-300 focus:border-[#D4A017] focus:bg-white"
                         }`}
                       />
                     </div>
@@ -308,7 +308,7 @@ export default function CheckoutPage() {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         className={`w-full bg-gray-50 border rounded-xl px-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all ${
-                          formErrors.phone ? "border-red-300 bg-red-50/20" : "border-gray-200 hover:border-gray-300 focus:border-[#740108] focus:bg-white"
+                          formErrors.phone ? "border-red-300 bg-red-50/20" : "border-gray-200 hover:border-gray-300 focus:border-[#D4A017] focus:bg-white"
                         }`}
                       />
                     </div>
@@ -331,7 +331,7 @@ export default function CheckoutPage() {
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
                       className={`w-full bg-gray-50 border rounded-xl px-4 py-2.5 text-xs md:text-sm font-bold text-gray-700 outline-none transition-all resize-none ${
-                        formErrors.address ? "border-red-300 bg-red-50/20" : "border-gray-200 hover:border-gray-300 focus:border-[#740108] focus:bg-white"
+                        formErrors.address ? "border-red-300 bg-red-50/20" : "border-gray-200 hover:border-gray-300 focus:border-[#D4A017] focus:bg-white"
                       }`}
                     />
                     {formErrors.address && (
@@ -347,7 +347,7 @@ export default function CheckoutPage() {
               {/* 2. SHIPPING AREA SELECTION */}
               <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm space-y-4">
                 <h2 className="text-sm font-extrabold text-gray-800 uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 pb-3">
-                  <Truck size={16} className="text-[#740108]" />
+                  <Truck size={16} className="text-[#D4A017]" />
                   <span>{language === "en" ? "2. Delivery Location" : "২. ডেলিভারি এলাকা নির্বাচন"}</span>
                 </h2>
 
@@ -358,15 +358,15 @@ export default function CheckoutPage() {
                     onClick={() => setShippingArea("inside")}
                     className={`p-4 border rounded-2xl flex items-center gap-3.5 transition-all text-left ${
                       shippingArea === "inside"
-                        ? "border-[#740108] bg-red-50/30"
+                        ? "border-[#D4A017] bg-red-50/30"
                         : "border-gray-100 bg-gray-50 hover:bg-gray-100/50"
                     }`}
                   >
                     <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                      shippingArea === "inside" ? "border-[#740108]" : "border-gray-300"
+                      shippingArea === "inside" ? "border-[#D4A017]" : "border-gray-300"
                     }`}>
                       {shippingArea === "inside" && (
-                        <div className="w-2 h-2 rounded-full bg-[#740108]" />
+                        <div className="w-2 h-2 rounded-full bg-[#D4A017]" />
                       )}
                     </div>
                     <div className="flex-1 space-y-1">
@@ -377,7 +377,7 @@ export default function CheckoutPage() {
                         {language === "en" ? "Delivery: 2-3 Days" : "ডেলিভারি সময়: ২-৩ দিন"}
                       </span>
                     </div>
-                    <span className="text-xs md:text-sm font-black text-[#740108] flex-shrink-0">
+                    <span className="text-xs md:text-sm font-black text-[#D4A017] flex-shrink-0">
                       {formatShippingOption(80 / 120)}
                     </span>
                   </button>
@@ -388,15 +388,15 @@ export default function CheckoutPage() {
                     onClick={() => setShippingArea("outside")}
                     className={`p-4 border rounded-2xl flex items-center gap-3.5 transition-all text-left ${
                       shippingArea === "outside"
-                        ? "border-[#740108] bg-red-50/30"
+                        ? "border-[#D4A017] bg-red-50/30"
                         : "border-gray-100 bg-gray-50 hover:bg-gray-100/50"
                     }`}
                   >
                     <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                      shippingArea === "outside" ? "border-[#740108]" : "border-gray-300"
+                      shippingArea === "outside" ? "border-[#D4A017]" : "border-gray-300"
                     }`}>
                       {shippingArea === "outside" && (
-                        <div className="w-2 h-2 rounded-full bg-[#740108]" />
+                        <div className="w-2 h-2 rounded-full bg-[#D4A017]" />
                       )}
                     </div>
                     <div className="flex-1 space-y-1">
@@ -407,7 +407,7 @@ export default function CheckoutPage() {
                         {language === "en" ? "Delivery: 3-5 Days" : "ডেলিভারি সময়: ৩-৫ দিন"}
                       </span>
                     </div>
-                    <span className="text-xs md:text-sm font-black text-[#740108] flex-shrink-0">
+                    <span className="text-xs md:text-sm font-black text-[#D4A017] flex-shrink-0">
                       {formatShippingOption(150 / 120)}
                     </span>
                   </button>
@@ -417,7 +417,7 @@ export default function CheckoutPage() {
               {/* 3. PAYMENT METHOD SECTION */}
               <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm space-y-4">
                 <h2 className="text-sm font-extrabold text-gray-800 uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 pb-3">
-                  <CreditCard size={16} className="text-[#740108]" />
+                  <CreditCard size={16} className="text-[#D4A017]" />
                   <span>{language === "en" ? "3. Payment System" : "৩. পেমেন্ট পদ্ধতি"}</span>
                 </h2>
 
@@ -429,7 +429,7 @@ export default function CheckoutPage() {
                       onClick={() => setPaymentMethod("cod")}
                       className={`p-4 border rounded-2xl flex items-start gap-3 transition-all text-left ${
                         paymentMethod === "cod"
-                          ? "border-[#740108] bg-red-50/30"
+                          ? "border-[#D4A017] bg-red-50/30"
                           : "border-gray-100 bg-gray-50 text-gray-500 hover:bg-gray-100/50"
                       }`}
                     >
@@ -437,7 +437,7 @@ export default function CheckoutPage() {
                         type="radio"
                         checked={paymentMethod === "cod"}
                         onChange={() => {}}
-                        className="mt-1 accent-[#740108]"
+                        className="mt-1 accent-[#D4A017]"
                       />
                       <div className="space-y-1 leading-tight">
                         <span className="block text-xs md:text-sm font-black uppercase text-gray-900">
@@ -455,7 +455,7 @@ export default function CheckoutPage() {
                       onClick={() => setPaymentMethod("mobile")}
                       className={`p-4 border rounded-2xl flex items-start gap-3 transition-all text-left ${
                         paymentMethod === "mobile"
-                          ? "border-[#740108] bg-red-50/30"
+                          ? "border-[#D4A017] bg-red-50/30"
                           : "border-gray-100 bg-gray-50 text-gray-500 hover:bg-gray-100/50"
                       }`}
                     >
@@ -463,7 +463,7 @@ export default function CheckoutPage() {
                         type="radio"
                         checked={paymentMethod === "mobile"}
                         onChange={() => {}}
-                        className="mt-1 accent-[#740108]"
+                        className="mt-1 accent-[#D4A017]"
                       />
                       <div className="space-y-1 leading-tight">
                         <span className="block text-xs md:text-sm font-black uppercase text-gray-900">
@@ -562,12 +562,12 @@ export default function CheckoutPage() {
                             )}
                           </div>
 
-                          <div className="bg-white border border-[#740108]/20 rounded-xl p-3 flex items-center justify-between gap-4 shadow-sm">
+                          <div className="bg-white border border-[#D4A017]/20 rounded-xl p-3 flex items-center justify-between gap-4 shadow-sm">
                             <div className="space-y-0.5">
                               <span className="block text-[9px] uppercase tracking-wider text-gray-400 font-bold">
                                 {language === "en" ? "Personal Account Number" : "পার্সোনাল অ্যাকাউন্ট নম্বর"}
                               </span>
-                              <span className="block text-sm md:text-base font-black tracking-wider text-[#740108] font-mono">
+                              <span className="block text-sm md:text-base font-black tracking-wider text-[#D4A017] font-mono">
                                 01307102810
                               </span>
                             </div>
@@ -610,7 +610,7 @@ export default function CheckoutPage() {
                               value={senderNumber}
                               onChange={(e) => setSenderNumber(e.target.value)}
                               className={`w-full bg-white border rounded-lg px-3 py-2 text-xs font-bold text-gray-700 outline-none transition-all ${
-                                formErrors.senderNumber ? "border-red-300 bg-red-50/10" : "border-gray-200 hover:border-gray-300 focus:border-[#740108]"
+                                formErrors.senderNumber ? "border-red-300 bg-red-50/10" : "border-gray-200 hover:border-gray-300 focus:border-[#D4A017]"
                               }`}
                             />
                             {formErrors.senderNumber && (
@@ -629,7 +629,7 @@ export default function CheckoutPage() {
                               value={transactionId}
                               onChange={(e) => setTransactionId(e.target.value)}
                               className={`w-full bg-white border rounded-lg px-3 py-2 text-xs font-bold text-gray-700 outline-none transition-all ${
-                                formErrors.transactionId ? "border-red-300 bg-red-50/10" : "border-gray-200 hover:border-gray-300 focus:border-[#740108]"
+                                formErrors.transactionId ? "border-red-300 bg-red-50/10" : "border-gray-200 hover:border-gray-300 focus:border-[#D4A017]"
                               }`}
                             />
                             {formErrors.transactionId && (
@@ -701,7 +701,7 @@ export default function CheckoutPage() {
 
                   <div className="border-t border-gray-100 pt-3.5 flex justify-between font-black text-base text-gray-900">
                     <span>{language === "en" ? "Total Due" : "সর্বমোট বিল"}</span>
-                    <span className="text-[#740108] text-lg font-black">{language === "en" ? displayTotal : toBanglaDigits(displayTotal)} {currencySymbol}</span>
+                    <span className="text-[#D4A017] text-lg font-black">{language === "en" ? displayTotal : toBanglaDigits(displayTotal)} {currencySymbol}</span>
                   </div>
                 </div>
 
@@ -709,7 +709,7 @@ export default function CheckoutPage() {
                 <button
                   onClick={handlePlaceOrder}
                   disabled={isSubmitting}
-                  className="w-full bg-[#740108] hover:bg-[#5c0006] text-white h-12 rounded-xl font-black text-xs md:text-sm tracking-wide shadow-md transition-all uppercase flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#D4A017] hover:bg-[#5c0006] text-white h-12 rounded-xl font-black text-xs md:text-sm tracking-wide shadow-md transition-all uppercase flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />

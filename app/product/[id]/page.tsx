@@ -39,7 +39,7 @@ export default function ProductDetailPage() {
   if (isLoadingProducts) {
     return (
       <div className="flex justify-center items-center min-h-[50vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#740108] border-t-transparent"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#D4A017] border-t-transparent"></div>
       </div>
     );
   }
@@ -102,7 +102,7 @@ export default function ProductDetailPage() {
               key={idx}
               onClick={() => setActiveImageIndex(idx)}
               className={`relative aspect-[3/4] w-full rounded-lg overflow-hidden border-2 bg-gray-50 flex-shrink-0 transition-all ${
-                activeImageIndex === idx ? "border-[#740108] shadow-sm" : "border-transparent opacity-70 hover:opacity-100"
+                activeImageIndex === idx ? "border-[#D4A017] shadow-sm" : "border-transparent opacity-70 hover:opacity-100"
               }`}
             >
               <Image
@@ -127,7 +127,7 @@ export default function ProductDetailPage() {
             className="object-cover"
           />
           {product.discountPercent > 0 && (
-            <span className="absolute top-4 left-4 bg-[#740108] text-white text-xs font-black px-3 py-1.5 rounded-lg shadow-md">
+            <span className="absolute top-4 left-4 bg-[#D4A017] text-white text-xs font-black px-3 py-1.5 rounded-lg shadow-md">
               -{product.discountPercent}% OFF
             </span>
           )}
@@ -140,7 +140,7 @@ export default function ProductDetailPage() {
               key={idx}
               onClick={() => setActiveImageIndex(idx)}
               className={`relative w-16 h-20 rounded-lg overflow-hidden border-2 flex-shrink-0 bg-gray-50 transition-all ${
-                activeImageIndex === idx ? "border-[#740108]" : "border-transparent opacity-75"
+                activeImageIndex === idx ? "border-[#D4A017]" : "border-transparent opacity-75"
               }`}
             >
               <Image
@@ -189,7 +189,7 @@ export default function ProductDetailPage() {
 
           {/* Pricing Display */}
           <div className="flex items-baseline gap-3 py-4 border-y border-gray-100">
-            <span className="text-2xl font-black text-[#740108]">
+            <span className="text-2xl font-black text-[#D4A017]">
               {displayActivePrice} {currencySymbol}
             </span>
             {product.discountPercent > 0 && (
@@ -210,7 +210,7 @@ export default function ProductDetailPage() {
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
                   className={`relative w-12 h-16 rounded-md overflow-hidden border-2 bg-gray-50 transition-all ${
-                    activeImageIndex === idx ? "border-[#740108] scale-105 shadow-sm" : "border-gray-200 opacity-80 hover:opacity-100"
+                    activeImageIndex === idx ? "border-[#D4A017] scale-105 shadow-sm" : "border-gray-200 opacity-80 hover:opacity-100"
                   }`}
                 >
                   <Image
@@ -238,7 +238,7 @@ export default function ProductDetailPage() {
                     onClick={() => setSelectedSize(size)}
                     className={`h-9 px-4 border rounded-lg font-bold text-xs flex items-center justify-center transition-all ${
                       selectedSize === size
-                        ? "border-[#740108] bg-red-50 text-[#740108]"
+                        ? "border-[#D4A017] bg-red-50 text-[#D4A017]"
                         : "border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50"
                     }`}
                   >
@@ -311,7 +311,7 @@ export default function ProductDetailPage() {
             onClick={() => setActiveTab("desc")}
             className={`pb-3.5 text-sm font-bold border-b-2 px-6 transition-colors ${
               activeTab === "desc"
-                ? "border-[#740108] text-[#740108]"
+                ? "border-[#D4A017] text-[#D4A017]"
                 : "border-transparent text-gray-400 hover:text-gray-700"
             }`}
           >
@@ -321,7 +321,7 @@ export default function ProductDetailPage() {
             onClick={() => setActiveTab("features")}
             className={`pb-3.5 text-sm font-bold border-b-2 px-6 transition-colors ${
               activeTab === "features"
-                ? "border-[#740108] text-[#740108]"
+                ? "border-[#D4A017] text-[#D4A017]"
                 : "border-transparent text-gray-400 hover:text-gray-700"
             }`}
           >
@@ -347,7 +347,7 @@ export default function ProductDetailPage() {
         <section className="space-y-6 mb-16">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-4">
             <h2 className="text-lg md:text-xl font-black text-gray-900 uppercase tracking-tight flex items-center gap-2">
-              <span className="w-2.5 h-6 bg-[#740108] rounded" />
+              <span className="w-2.5 h-6 bg-[#D4A017] rounded" />
               <span>{language === "en" ? "You May Also Like" : "অন্যান্য পছন্দসমূহ"}</span>
             </h2>
           </div>

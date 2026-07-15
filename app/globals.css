@@ -35,7 +35,7 @@ h3 {
 
 html {
   scroll-behavior: smooth;
-  scrollbar-color: #740108 #050505;
+  scrollbar-color: #D4A017 #050505;
   scrollbar-width: thin;
   overflow-x: hidden;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #740108;
+  background-color: #D4A017;
   border: 2px solid #050505;
   border-radius: 999px;
 }

@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <Suspense fallback={
       <div className="flex justify-center items-center min-h-[50vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#740108] border-t-transparent"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#D4A017] border-t-transparent"></div>
       </div>
     }>
       <HomeContent />
@@ -45,7 +45,7 @@ function HomeContent() {
   if (isLoadingProducts) {
     return (
       <div className="flex justify-center items-center min-h-[50vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#740108] border-t-transparent"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#D4A017] border-t-transparent"></div>
       </div>
     );
   }
@@ -107,7 +107,7 @@ function HomeContent() {
               >
                 <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center overflow-hidden transition-all shadow-sm ${
                   activeCategory === cat.key
-                    ? "border-2 border-[#740108] scale-110 shadow-md ring-4 ring-red-50/80 bg-white"
+                    ? "border-2 border-[#D4A017] scale-110 shadow-md ring-4 ring-red-50/80 bg-white"
                     : "bg-white border border-gray-100 hover:border-gray-300 hover:shadow-md group-hover:scale-105"
                 }`}>
                   <img
@@ -119,7 +119,7 @@ function HomeContent() {
                   />
                 </div>
                 <span className={`text-[10px] md:text-xs font-bold transition-colors tracking-tight ${
-                  activeCategory === cat.key ? "text-[#740108] font-black" : "text-gray-600 group-hover:text-gray-900"
+                  activeCategory === cat.key ? "text-[#D4A017] font-black" : "text-gray-600 group-hover:text-gray-900"
                 }`}>
                   {language === "en" ? cat.labelEn : cat.labelBn}
                 </span>
@@ -135,7 +135,7 @@ function HomeContent() {
         <section className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-4">
             <h2 className="text-lg md:text-xl font-black text-gray-900 uppercase tracking-tight flex items-center gap-2">
-              <span className="w-2.5 h-6 bg-[#740108] rounded" />
+              <span className="w-2.5 h-6 bg-[#D4A017] rounded" />
               <span>{language === "en" ? "Our Collections" : "আমাদের কালেকশন"}</span>
             </h2>
 

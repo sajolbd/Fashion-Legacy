@@ -42,7 +42,7 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            primary: "#740108",
+            primary: "#D4A017",
             background: "#FFFFFF",
           },
         },
